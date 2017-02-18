@@ -16,7 +16,14 @@ public class Tetris {
     }
 
     public void tick() {
-        activeShape.advance();
+       activeShape.advance();
+        if(board.isShapeLocked(activeShape)) {
+          activeShape = null;
+        }
+    }
+
+    public Shape getActiveShape() {
+        return activeShape;
     }
 }
 

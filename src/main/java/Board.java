@@ -14,4 +14,8 @@ public class Board {
             blocks[coordinate.getX()][coordinate.getY()] = true;
         }
     }
+
+    public boolean isShapeLocked(Shape shape) {
+        return shape.getBottomCoordinate().getX() == 23;
+    }
 }
