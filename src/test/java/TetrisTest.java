@@ -11,24 +11,20 @@ public class TetrisTest {
     @Before
     public void init() {
         underTest = new Tetris();
-
-        underTest.start();
+        underTest.start(Tetris.Shapes.STRAIGHT);
     }
 
     @Test
-    public void createsA10By24BoardWhenTheGameStarts() {
+    public void onStartCreatesA10By24BoardWhenTheGameStarts() {
         assertThat(underTest.getBoard().length, is(10));
         assertThat(underTest.getBoard()[0].length, is(24));
     }
 
     @Test
-    public void aTickCausesANewShapeToAppearOnTheBoard() {
-        underTest.tick();
-
+    public void onStartCausesANewShapeToAppearOnTheBoard() {
         assertThat(underTest.getBoard()[0][4], is(true));
         assertThat(underTest.getBoard()[1][4], is(true));
         assertThat(underTest.getBoard()[2][4], is(true));
         assertThat(underTest.getBoard()[3][4], is(true));
     }
-
 }
