@@ -27,4 +27,15 @@ public class TetrisTest {
         assertThat(underTest.getBoard()[2][4], is(true));
         assertThat(underTest.getBoard()[3][4], is(true));
     }
+
+    @Test
+    public void onTickShapeMovesDownOneBlock() {
+        underTest.tick();
+
+        assertThat(underTest.getBoard()[0][4], is(false));
+        assertThat(underTest.getBoard()[1][4], is(true));
+        assertThat(underTest.getBoard()[2][4], is(true));
+        assertThat(underTest.getBoard()[3][4], is(true));
+        assertThat(underTest.getBoard()[4][4], is(true));
+    }
 }

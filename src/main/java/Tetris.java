@@ -17,7 +17,11 @@ public class Tetris {
     }
 
     public void tick() {
-
+        board[0][4] = false;
+        board[1][4] = true;
+        board[2][4] = true;
+        board[3][4] = true;
+        board[4][4] = true;
     }
 }
 
