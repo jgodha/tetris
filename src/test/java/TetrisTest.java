@@ -1,8 +1,9 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
+import static org.hamcrest.Matchers.is;
+
+import static org.junit.Assert.*;
 
 public class TetrisTest {
 
@@ -11,7 +12,7 @@ public class TetrisTest {
     @Before
     public void init() {
         underTest = new Tetris();
-        underTest.start(Tetris.Shapes.STRAIGHT);
+        underTest.start();
     }
 
     @Test

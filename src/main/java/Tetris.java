@@ -1,27 +1,24 @@
 public class Tetris {
 
-    public enum Shapes {STRAIGHT};
-    public boolean[][] board;
+    private Shape activeShape;
 
-    public void start(Shapes initialShape) {
-        board = new boolean[10][24];
+    public Board board;
 
-        board[0][4] = true;
-        board[1][4] = true;
-        board[2][4] = true;
-        board[3][4] = true;
+    public void start() {
+        board = new Board();
+
+        activeShape = new Shape();
     }
 
     public boolean[][] getBoard() {
-        return board;
+        board.addShape(activeShape);
+        return board.getBoard();
     }
 
     public void tick() {
-        board[0][4] = false;
-        board[1][4] = true;
-        board[2][4] = true;
-        board[3][4] = true;
-        board[4][4] = true;
+        activeShape.advance();
     }
 }
+
+
 
