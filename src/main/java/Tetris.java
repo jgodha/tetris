@@ -1,6 +1,3 @@
-/**
- * Created by jgodha on 2/18/17.
- */
 public class Tetris {
 
     public boolean[][] board;
@@ -11,5 +8,12 @@ public class Tetris {
 
     public boolean[][] getBoard() {
         return board;
+    }
+
+    public void tick() {
+        board[0][4] = true;
+        board[1][4] = true;
+        board[2][4] = true;
+        board[3][4] = true;
     }
 }
